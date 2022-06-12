@@ -18,21 +18,16 @@ function newImage(url){
     return image
 }
 
-let greenCharacter = newImage('assets/green-character.gif')
-move(greenCharacter, 100, 250)
-let tree = newImage('assets/tree.png')
-move(tree, 200, 450)
-let pillar = newImage('assets/pillar.png')
-move(pillar, 350, 250)
-let pineTree = newImage('assets/pine-tree.png')
-move(pineTree, 450, 350)
-let crate = newImage('assets/crate.png')
-move(crate, 150, 350)
-let well = newImage('assets/well.png')
-move(well, 500, )
+move(newImage('assets/green-character.gif')).to(100, 250)
+move(newImage('assets/tree.png')).to(200, 450)
+move(newImage('assets/pillar.png')).to(350, 250)
+move(newImage('assets/pine-tree.png')).to(450, 350)
+move(newImage('assets/crate.png')).to(150, 350)
+move(newImage('assets/well.png')).to(500, 575)
 
 function newItem(url, left, bottom){
-    let item = newImage(url, left, bottom)
+    let item = newImage(url)
+    move(item).to(left, bottom)
     item.addEventListener('click', () => {
         item.remove()
         let inventoryItem = document.createElement('img')
